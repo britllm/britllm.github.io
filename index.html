@@ -1,79 +1,457 @@
-<!DOCTYPE html>  
-<html lang="en">  
-  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>BritLLM</title>  
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-    <style>  
-        body,  
-        html {  
-            height: 100%;  
-            margin: 0;  
-            display: flex;  
-            justify-content: center;  
-            align-items: center;  
-            font-family: Arial, sans-serif;  
-            background-color: #f4f4f9;  
-            color: #333;  
-        }  
-  
-        .container {  
-            text-align: center;  
-            padding: 20px;  
-        }  
-  
-        h1 {  
-            font-size: 2.5em;  
-            margin-bottom: 20px;  
-            color: #0073e6;  
-        }  
-  
-        p {  
-            font-size: 1.2em;  
-            color: #555;  
-        }  
-  
-        .footer {  
-            margin-top: 40px;  
-            font-size: 0.9em;  
-            color: #888;  
-        }  
-  
-        .social-icons {  
-            margin-top: 20px;  
-        }  
-  
-        .social-icons a {  
-            margin: 0 10px;  
-            text-decoration: none;  
-            color: grey;  
-        }  
-  
-        .social-icons .material-icons {  
-            font-size: 30px;  
-            vertical-align: middle;  
-        }  
-    </style>  
-</head>  
-  
-<body>  
-    <div class="container">  
-        <h1>Coming Soon</h1>  
-        <p>Stay tuned for updates!</p>  
-        <div class="social-icons">  
-            <a href="https://github.com/britllm" target="_blank">  
-                <i class="material-icons">code</i>  
-            </a>  
-            <a href="mailto:contact@llm.org.uk">  
-                <i class="material-icons">email</i>  
-            </a>  
-        </div>  
-        <div class="footer">  
-            &copy; 2024 BritLLM  
-        </div>  
-    </div>  
-</body>  
-  
-</html>  
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>BritLLM</title>
+	<style>
+	<!--
+		html {
+			color:        black;
+			background:   white;
+			max-width:    45rem;
+			margin-left:  auto;
+			margin-right: auto;
+		}
+		table {
+			margin-bottom: 0.6rem;
+		}
+		figure {
+			margin-bottom: 1.6rem;
+		}
+		a {
+			color: inherit;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		@media (prefers-color-scheme: dark) {
+		html {
+			color:      white;
+			background: black;
+		}
+		}
+	-->
+	</style>
+</head>
+<body>
+<header>
+<h1>BritLLM</h1>
+<p>
+We aspire to produce freely available large language models (LLMs), evaluate LLMs for UK languages and use-cases, and produce publicly available technical know-how to share within the UK and beyond.
+</p>
+</header>
+<main>
+<h2>What and why is BritLLM?</h2>
+<p>
+LLMs have become a key component of any advanced natural language processing system.
+Recently, we have seen an explosion in public and commercial interest in applying these technologies in academia, government, and industry.
+This technology promises to fundamentally change how humans interact with computers and enable large-scale automation of any task which involves the generation and processing of text or speech.
+</p>
+<p>
+This arguably makes LLMs a technology of key national importance and one that is likely to grow over the coming years.
+However, as it stands there is no publicly available LLM or exploration thereof to serve key interests in the UK.
+</p>
+<p>
+We believe it is essential for UK academia, government, and industry that there is both the know-how and models available freely to serve them.
+UK society, as any society, is unique and thus has unique needs.
+For example, the differences between say US and UK law, finance, health, etc. means that LLMs developed solely using US data is unlikely to be sufficiently aligned with UK needs.
+The same goes for the rich set of languages spoken across the British Isles: English, Scots, Welsh, Scottish Gaelic, Irish, etc.
+</p>
+<p>
+To this end, we have launched the BritLLM project, an ongoing effort to produce training data, evaluation data, know-how, and freely available models aligned with UK interests.
+Our goal is to release a series of competitive LLM models, while empirically quantifying the suitability of commercial and non-commercial models made available by other parties.
+</p>
+<p>
+The effort is led by the <a href="https://nlp.cs.ucl.ac.uk">University College London NLP group</a>, which has a track record of groundbreaking research in the intersection between NLP and machine learning. They regularly publish their research at the leading venues in their field (ACL, EMNLP, NeurIPS, ICLR, etc.) and have received numerous best and outstanding paper awards.
+</p>
+<h2>Releases</h2>
+<h3>BritLLM v0.1: Caernarfon 3B</h3>
+<p>
+<a href="https://huggingface.co/britllm/britllm-3b-v0.1">Available on Hugging Face</a> under the <a href="https://opendatacommons.org/licenses/by/1-0">Open Data Commons Attribution License (ODC-By) v1.0</a> license.
+</p>
+<p>
+<figure>
+<table>
+	<tr>
+		<th>Model</th>
+		<th>Mean</th>
+		<th>ARC-c</th>
+		<th>HellaSwag</th>
+		<th>MMLU</th>
+		<th>TruthfulQA</th>
+		<th>Winogrande</th>
+	</tr>
+	<tr>
+		<td>OpenLLaMA 7B v2</td>
+		<td>52.4</td>
+		<td>43.7</td>
+		<td>72.2</td>
+		<td>41.3</td>
+		<td>35.5</td>
+		<td>69.4</td>
+	</tr>
+	<tr>
+		<td>MPT 7B</td>
+		<td>51.3</td>
+		<td>47.4</td>
+		<td>77.7</td>
+		<td>26.8</td>
+		<td>33.3</td>
+		<td>71.1</td>
+	</tr>
+	<tr>
+		<td><strong>Caernarfon 3B</strong></td>
+		<td>50.7</td>
+		<td>43.6</td>
+		<td>69.6</td>
+		<td>37.6</td>
+		<td>37.8</td>
+		<td>65.1</td>
+	</tr>
+	<tr>
+		<td>Open LLaMA 7B</td>
+		<td>50.5</td>
+		<td>47.0</td>
+		<td>72.0</td>
+		<td>30.5</td>
+		<td>34.9</td>
+		<td>68.0</td>
+	</tr>
+	<tr>
+		<td>Open LLaMA 3B v2</td>
+		<td>48.2</td>
+		<td>40.3</td>
+		<td>71.6</td>
+		<td>27.1</td>
+		<td>34.8</td>
+		<td>67.0</td>
+	</tr>
+	<tr>
+		<td>OPT 6.7B</td>
+		<td>46.6</td>
+		<td>38.2</td>
+		<td>68.9</td>
+		<td>24.8</td>
+		<td>35.1</td>
+		<td>65.8</td>
+	</tr>
+	<tr>
+		<td>Open LLaMA 3B</td>
+		<td>45.8</td>
+		<td>39.9</td>
+		<td>62.7</td>
+		<td>26.9</td>
+		<td>35.0</td>
+		<td>64.7</td>
+	</tr>
+	<tr>
+		<td>TinyLLaMA v1.1</td>
+		<td>44.6</td>
+		<td>37.1</td>
+		<td>62.3</td>
+		<td>26.8</td>
+		<td>35.1</td>
+		<td>61.6</td>
+	</tr>
+	<tr>
+		<td>OPT 2.7B</td>
+		<td>44.4</td>
+		<td>34.9</td>
+		<td>61.3</td>
+		<td>25.4</td>
+		<td>37.6</td>
+		<td>62.7</td>
+	</tr>
+	<tr>
+		<td>Pythia 2.8B</td>
+		<td>43.7</td>
+		<td>36.2</td>
+		<td>60.7</td>
+		<td>26.8</td>
+		<td>35.9</td>
+		<td>59.0</td>
+	</tr>
+	<tr>
+		<td>TinyLLaMA v1.0</td>
+		<td>43.2</td>
+		<td>34.2</td>
+		<td>60.0</td>
+		<td>25.5</td>
+		<td>37.6</td>
+		<td>58.7</td>
+	</tr>
+</table>
+<figcaption>On the English <a href="https://huggingface.co/open-llm-leaderboard">OpenLLM benchmark</a>, Caernarfon 3B performs better than open models of the same size and even outperforms several larger open models.</figcaption>
+</figure>
+<figure>
+<table>
+	<tr>
+		<th>Model</th>
+		<th>Mean</th>
+		<th>ARC-e</th>
+		<th>PIQA</th>
+		<th>XNLI</th>
+	</tr>
+	<tr>
+		<td><strong>Caernarfon 3B</strong></td>
+		<td>44.3</td>
+		<td>36.5</td>
+		<td>55.2</td>
+		<td>41.3</td>
+	</tr>
+	<tr>
+		<td>LLaMA 3 8B</td>
+		<td>43.0</td>
+		<td>34.0</td>
+		<td>54.1</td>
+		<td>41.0</td>
+	</tr>
+	<tr>
+		<td>Bloom 7B</td>
+		<td>39.2</td>
+		<td>26.5</td>
+		<td>51.5</td>
+		<td>39.5</td>
+	</tr>
+	<tr>
+		<td>mGPT 13B</td>
+		<td>38.6</td>
+		<td>26.0</td>
+		<td>52.5</td>
+		<td>37.2</td>
+	</tr>
+	<tr>
+		<td>Mistral 7B</td>
+		<td>38.1</td>
+		<td>27.5</td>
+		<td>53.7</td>
+		<td>33.1</td>
+	</tr>
+	<tr>
+		<td>Phi 2</td>
+		<td>37.8</td>
+		<td>27.1</td>
+		<td>51.6</td>
+		<td>34.8</td>
+	</tr>
+</table>
+<figcaption>For BritEval: Irish, Caernarfon 3B performs better than a number of comparable models, albeit being smaller in size.</figcaption>
+</figure>
+<figure>
+<table>
+	<tr>
+		<th>Model</th>
+		<th>Mean</th>
+		<th>ARC-e</th>
+		<th>PIQA</th>
+		<th>XNLI</th>
+	</tr>
+	<tr>
+		<td><strong>Caernarfon 3B</strong></td>
+		<td>46.2</td>
+		<td>40.8</td>
+		<td>60.1</td>
+		<td>37.7</td>
+	</tr>
+	<tr>
+		<td>LLaMA 3 8B</td>
+		<td>43.6</td>
+		<td>40.2</td>
+		<td>55.0</td>
+		<td>35.5</td>
+	</tr>
+	<tr>
+		<td>mGPT 13B</td>
+		<td>38.4</td>
+		<td>27.0</td>
+		<td>53.6</td>
+		<td>34.6</td>
+	</tr>
+	<tr>
+		<td>Phi 2</td>
+		<td>38.3</td>
+		<td>29.1</td>
+		<td>52.6</td>
+		<td>33.2</td>
+	</tr>
+	<tr>
+		<td>Mistral 7B</td>
+		<td>38.2</td>
+		<td>28.4</td>
+		<td>52.3</td>
+		<td>33.9</td>
+	</tr>
+	<tr>
+		<td>Bloom 7B</td>
+		<td>38.1</td>
+		<td>26.4</td>
+		<td>53.2</td>
+		<td>34.7</td>
+	</tr>
+</table>
+<figcaption>For BritEval: Welsh, the results largely mirrors those for BritEval: Irish.</figcaption>
+</figure>
+<figure>
+<table>
+	<tr>
+		<th>Model</th>
+		<th>Mean</th>
+		<th>ARC-e</th>
+		<th>PIQA</th>
+		<th>XNLI</th>
+	</tr>
+	<tr>
+		<td>Mistral 7B</td>
+		<td>63.0</td>
+		<td>67.2</td>
+		<td>72.5</td>
+		<td>49.2</td>
+	</tr>
+	<tr>
+		<td>LLaMA 3 8B</td>
+		<td>62.7</td>
+		<td>70.3</td>
+		<td>72.8</td>
+		<td>44.9</td>
+	</tr>
+	<tr>
+		<td><strong>Caernarfon 3B</strong></td>
+		<td>55.2</td>
+		<td>56.7</td>
+		<td>65.0</td>
+		<td>43.9</td>
+	</tr>
+	<tr>
+		<td>Phi 2</td>
+		<td>54.5</td>
+		<td>57.3</td>
+		<td>66.3</td>
+		<td>39.8</td>
+	</tr>
+	<tr>
+		<td>Bloom 7B</td>
+		<td>52.2</td>
+		<td>51.4</td>
+		<td>63.4</td>
+		<td>41.9</td>
+	</tr>
+	<tr>
+		<td>mGPT 13B</td>
+		<td>45.6</td>
+		<td>43.0</td>
+		<td>58.4</td>
+		<td>35.5</td>
+	</tr>
+</table>
+<figcaption>For BritEval: Scots, larger comparable models that were mainly trained using English data outperform Caernarfon 3B, possibly due to the larger proximity to English of Scots compared to other languages covered by BritEval.</figcaption>
+</figure>
+<figure>
+<table>
+	<tr>
+		<th>Model</th>
+		<th>Mean</th>
+		<th>ARC-e</th>
+		<th>PIQA</th>
+		<th>XNLI</th>
+	</tr>
+	<tr>
+		<td><strong>Caernarfon 3B</strong></td>
+		<td>42.1</td>
+		<td>32.0</td>
+		<td>55.9</td>
+		<td>38.3</td>
+	</tr>
+	<tr>
+		<td>LLaMA 3 8B</td>
+		<td>41.2</td>
+		<td>30.8</td>
+		<td>54.2</td>
+		<td>38.7</td>
+	</tr>
+	<tr>
+		<td>Bloom 7B</td>
+		<td>39.1</td>
+		<td>28.1</td>
+		<td>52.7</td>
+		<td>36.6</td>
+	</tr>
+	<tr>
+		<td>Phi 2</td>
+		<td>38.9</td>
+		<td>28.0</td>
+		<td>51.9</td>
+		<td>36.9</td>
+	</tr>
+	<tr>
+		<td>mGPT 13B</td>
+		<td>38.8</td>
+		<td>29.0</td>
+		<td>52.2</td>
+		<td>35.3</td>
+	</tr>
+	<tr>
+		<td>Mistral 7B</td>
+		<td>37.3</td>
+		<td>27.5</td>
+		<td>52.2</td>
+		<td>32.2</td>
+	</tr>
+</table>
+<figcaption>For BritEval: Scottish Gaelic, the results largely mirrors those for BritEval: Irish and BritEval: Welsh.</figcaption>
+</figure>
+<h2>Pretraining data</h2>
+<p>
+Our most recently released model (Caernarfon 3B) is pretrained on over 1.4 trillion tokens.
+</p>
+<h3>English pretraining data</h3>
+<p>
+For English pretraining, we use SlimPajama (627B) as our base pretraining set, which contains a diverse data sources such as Wikipedia, web-crawled data (Common Crawl), academic papers (arXiv), and source code.
+Inspired by recent research showing the power of synthetic data, we also transform a subset of SlimPajama into various formats such as QA (30B) and Multiple Choice (10B) using  an open-source model (Mistral 7B).
+Initially, the pretraining process only uses the SlimPajama subset, only introducing the latter subset once the model has been trained on one trillion tokens.
+</p>
+<h3>Pretraining data for British Languages</h3>
+<p>
+Unlike for English, collecting a large amount of high-quality, clean data is a difficult task for smaller and minority languages.
+Thus, we employ two pretraining data curation strategies:
+</p>
+<ol>
+	<li>As high-quality data, we use the full article text from Wikipedia for Irish, Welsh, Scots, and Scottish Gaelic.</li>
+	<li>As cross-lingual parallel data, we use parallel data from NLLB's open-license subsets for <a href="https://opus.nlpl.eu/NLLB/en&cy/v1/NLLB">Welsh-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&ga/v1/NLLB">Irish-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&gd/v1/NLLB">Scottish Gaelic</a>, and <a href="https://opus.nlpl.eu/NLLB/en&sco/v1/NLLB">Scots-English</a> to allow the model to more easily bridge its English knowledge to other languages.</li>
+</ol>
+<p>
+To encourage in-context learning behaviour for the alignment portion of training, we also adapt the parallel data into an in-context learning format.
+</p>
+<p>
+After curation, we have approximately one billion unique tokens and ten billions tokens in an in-context learning format, which is ~1.5% compared to the total size of the English-only pretraining data.
+Akin to the English synthetic data subset, the British language subset is introduced at the later stage of pretraining.
+</p>
+<h2>Evaluation data</h2>
+<h3>BritEval</h3>
+<p>
+BritEval aims to be a benchmark datasets covering all the languages of the British Isles.
+Currently, it covers <a href="https://en.wikipedia.org/wiki/Scots_language">Scots</a>, <a href="https://en.wikipedia.org/wiki/Irish_language">Irish</a>, <a href="https://en.wikipedia.org/wiki/Welsh_language">Welsh</a>, and <a href="https://en.wikipedia.org/wiki/Scottish_Gaelic">Scottish Gaelic</a>, and includes a number of domains: grade-school level multiple-choice science questions, physical commonsense reasoning, and natural language inference.
+</p>
+<p>
+Concretely, for the current version we have applied state-of-the-art machine translation and quality filtering to convert the <a href="https://huggingface.co/datasets/allenai/ai2_arc">AI2 Reasoning Challenge</a>, <a href="https://huggingface.co/datasets/ybisk/piqa">Physical Interaction: Question Answering</a>, <a href="https://github.com/facebookresearch/XNLI">Cross-lingual Natural Language Inference</a> datasets into the above British languages and are working to add more languages and domains for future releases and work with local communities to certify the quality of the data.
+</p>
+<h2>Contact</h2>
+<p>
+<a href="mailto:nlp-britllm@cs.ucl.ac.uk">nlp-britllm@cs.ucl.ac.uk</a>
+</p>
+<h2>Members</h2>
+<ul>
+<li><a href="https://dadelani.github.io">David Ifeoluwa Adelani</a></li>
+<li><a href="https://github.com/yihong-chen">Yihong Chen</a></li>
+<li><a href="https://xlhex.github.io">Xuanli He</a></li>
+<li><a href="https://yaolu.github.io">Yao Lu</a></li>
+<li><a href="https://pontus.stenetorp.se">Pontus Stenetorp</a></li>
+<li><a href="https://github.com/TheRootOf3">Andrzej Szablewski</a></li>
+<li><a href="https://www.linkedin.com/in/jiayi-wang-0a999847">Jiayi Wang</a></li>
+</ul>
+<h2>Acknowledgements</h2>
+<p>
+We would like to acknowledge the support of <a href="https://dirac.ac.uk">DiRAC (Distributed Research using Advanced Computing)</a>, <a href="https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research">Microsoft Research's Accelerate Foundation Models Research Grant</a>, the <a href="https://www.ucl.ac.uk/ai-centre">UCL Centre for Artificial Intelligence</a>, and the <a href="https://sites.google.com/view/genmodelshub">Generative Models AI Hub</a>.
+</p>
+</main>
+<footer>© BritLLM</footer>
+</body></html>
