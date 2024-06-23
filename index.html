@@ -416,7 +416,7 @@ Thus, we employ two pretraining data curation strategies:
 </p>
 <ol>
 	<li>As high-quality data, we use the full article text from Wikipedia for Irish, Welsh, Scots, and Scottish Gaelic.</li>
-	<li>As cross-lingual parallel data, we use parallel data from NLLB's open-license subsets for <a href="https://opus.nlpl.eu/NLLB/en&cy/v1/NLLB">Welsh-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&ga/v1/NLLB">Irish-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&gd/v1/NLLB">Scottish Gaelic</a>, and <a href="https://opus.nlpl.eu/NLLB/en&sco/v1/NLLB">Scots-English</a> to allow the model to more easily bridge its English knowledge to other languages.</li>
+	<li>As cross-lingual parallel data, we use parallel data from NLLB's open-license subsets for <a href="https://opus.nlpl.eu/NLLB/en&cy/v1/NLLB">Welsh-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&ga/v1/NLLB">Irish-English</a>, <a href="https://opus.nlpl.eu/NLLB/en&gd/v1/NLLB">Scottish Gaelic-English</a>, and <a href="https://opus.nlpl.eu/NLLB/en&sco/v1/NLLB">Scots-English</a> to allow the model to more easily bridge its English knowledge to other languages.</li>
 </ol>
 <p>
 To encourage in-context learning behaviour for the alignment portion of training, we also adapt the parallel data into an in-context learning format.
@@ -429,7 +429,7 @@ Akin to the English synthetic data subset, the British language subset is introd
 <h3>BritEval</h3>
 <p>
 BritEval aims to be a benchmark datasets covering all the languages of the British Isles.
-Currently, it covers <a href="https://en.wikipedia.org/wiki/Scots_language">Scots</a>, <a href="https://en.wikipedia.org/wiki/Irish_language">Irish</a>, <a href="https://en.wikipedia.org/wiki/Welsh_language">Welsh</a>, and <a href="https://en.wikipedia.org/wiki/Scottish_Gaelic">Scottish Gaelic-English</a>, and includes a number of domains: grade-school level multiple-choice science questions, physical commonsense reasoning, and natural language inference.
+Currently, it covers <a href="https://en.wikipedia.org/wiki/Scots_language">Scots</a>, <a href="https://en.wikipedia.org/wiki/Irish_language">Irish</a>, <a href="https://en.wikipedia.org/wiki/Welsh_language">Welsh</a>, and <a href="https://en.wikipedia.org/wiki/Scottish_Gaelic">Scottish Gaelic</a>, and includes a number of domains: grade-school level multiple-choice science questions, physical commonsense reasoning, and natural language inference.
 </p>
 <p>
 Concretely, for the current version we have applied state-of-the-art machine translation and quality filtering to convert the <a href="https://huggingface.co/datasets/allenai/ai2_arc">AI2 Reasoning Challenge</a>, <a href="https://huggingface.co/datasets/ybisk/piqa">Physical Interaction: Question Answering</a>, <a href="https://github.com/facebookresearch/XNLI">Cross-lingual Natural Language Inference</a> datasets into the above British languages and are working to add more languages and domains for future releases and work with local communities to certify the quality of the data.
